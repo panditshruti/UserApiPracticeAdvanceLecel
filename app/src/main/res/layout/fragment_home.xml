@@ -7,10 +7,26 @@
     android:orientation="vertical"
     tools:context=".ui.HomeFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+
+
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"/>
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:layout_margin="10dp"
+        android:id="@+id/user"
+        />
+       <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Racipe"
+        android:id="@+id/racipe"
+        android:layout_margin="10dp"
+        />
+
+
+
+
+
 
 </LinearLayout>

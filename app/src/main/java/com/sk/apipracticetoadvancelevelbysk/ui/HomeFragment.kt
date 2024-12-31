@@ -1,8 +1,11 @@
 package com.sk.apipracticetoadvancelevelbysk.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Telephony.Mms.Intents
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sk.apipracticetoadvancelevelbysk.R
 import com.sk.apipracticetoadvancelevelbysk.adapter.UserAdapter
@@ -20,21 +23,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
 
-        // Set up RecyclerView
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-        // Fetch data from the API
-        RetrofitClient.api.getUsers().enqueue(object : Callback<UserResponse> {
-            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if (response.isSuccessful) {
-                    val users = response.body()?.users ?: emptyList()
-                    binding.recyclerView.adapter = UserAdapter(users) // Pass the list of users to the adapter
-                }
-            }
-
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                // Handle the failure case
-            }
-        })
+       binding.user.setOnClickListener {
+           val action = HomeFragmentDirections.actionHomeFragmentToUserFragment()
+           findNavController().navigate(action)
+       }
+        binding.racipe.setOnClickListener {
+           val action = HomeFragmentDirections.actionHomeFragmentToRacipeFragment()
+           findNavController().navigate(action)
+       }
     }
 }
