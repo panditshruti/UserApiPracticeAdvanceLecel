@@ -15,6 +15,7 @@ class RacipeAdapter(private val recipes: List<Recipe>) : RecyclerView.Adapter<Ra
     inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val recipeName: TextView = itemView.findViewById(R.id.recipeName)
         val recipeImage: ImageView = itemView.findViewById(R.id.recipeImage)
+        val recipeImagefull: ImageView = itemView.findViewById(R.id.recipeImagefull)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -28,6 +29,12 @@ class RacipeAdapter(private val recipes: List<Recipe>) : RecyclerView.Adapter<Ra
         Glide.with(holder.itemView.context)
             .load(recipe.image)
             .into(holder.recipeImage)
+
+        holder.recipeImage.setOnClickListener {
+            Glide.with(holder.itemView.context)
+                .load(recipe.image)
+                .into(holder.recipeImagefull)
+        }
     }
 
     override fun getItemCount() = recipes.size
