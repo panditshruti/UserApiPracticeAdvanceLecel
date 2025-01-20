@@ -35,6 +35,11 @@ class RacipeAdapter(private val recipes: List<Recipe>) : RecyclerView.Adapter<Ra
                 .load(recipe.image)
                 .into(holder.recipeImagefull)
         }
+
+        holder.recipeImagefull.setOnLongClickListener {
+            holder.recipeImagefull.visibility = View.GONE
+            true // Indicate the long click has been handled
+        }
     }
 
     override fun getItemCount() = recipes.size

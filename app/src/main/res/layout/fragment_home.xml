@@ -23,6 +23,13 @@
         android:id="@+id/racipe"
         android:layout_margin="10dp"
         />
+       <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="StudentDetails"
+        android:id="@+id/studentDetails"
+        android:layout_margin="10dp"
+        />
 
 
 

@@ -1,17 +1,17 @@
 package com.sk.apipracticetoadvancelevelbysk.model
 
-import com.sk.apipracticetoadvancelevelbysk.servece.RacipeApiService
+import com.sk.apipracticetoadvancelevelbysk.servece.StudentApiSerice
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitInstance {
-    private const val BASE_URL = "https://dummyjson.com/"
+object RetrofitInstanceStudent {
+    private const val BASE_URL = "http://localhost:4000/api/"
 
-    val api: RacipeApiService by lazy {
+    val api: StudentApiSerice by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(RacipeApiService::class.java)
+            .create(StudentApiSerice::class.java)
     }
 }

@@ -1,6 +1,6 @@
 package com.sk.apipracticetoadvancelevelbysk.model
 
-import com.sk.apipracticetoadvancelevelbysk.ApiService
+import com.sk.apipracticetoadvancelevelbysk.servece.ApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

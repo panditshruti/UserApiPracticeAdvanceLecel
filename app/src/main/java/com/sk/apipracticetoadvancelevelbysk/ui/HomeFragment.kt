@@ -31,5 +31,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
            val action = HomeFragmentDirections.actionHomeFragmentToRacipeFragment()
            findNavController().navigate(action)
        }
+        binding.studentDetails.setOnClickListener {
+           val action = HomeFragmentDirections.actionHomeFragmentToStudentFragment()
+           findNavController().navigate(action)
+       }
     }
 }
